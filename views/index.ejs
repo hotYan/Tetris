@@ -1,0 +1,95 @@
+<%- include header %>
+<style>
+  h2 {
+    padding: 40px 0 0;
+  }
+
+  .index {
+    /* background-color: aqua; */
+    padding: 0 40px 30px 40px;
+  }
+
+  .index li {
+    /* background-color: aquamarine; */
+    margin: 0 0 25px 0;
+  }
+
+  .index li p {
+    line-height: 30px;
+  }
+
+  .beginGame a {
+    margin: 0 45px 0 0;
+    /* padding-left: 38%; */
+  }
+
+  .nav_ul li.nav_left {
+    float: left;
+    margin: 0 0 0 30px;
+  }
+
+  .wrap {
+    min-height: 780px;
+  }
+</style>
+</head>
+
+<body>
+  <div class="nav_top">
+    <ul class="nav_ul">
+      <li class="login">
+        <% if(user.Name){ %>
+        <a id="name" href="/data"><%= user.Name %></a>
+        <% }else{ %>
+        <a id="login" href="/login">登录 | </a>
+        <a id="register" href="/reg">注册</a>
+        <% } %>
+      </li>
+      <li class="nav_left"><a href="/">TETRIS</a></li>
+    </ul>
+  </div>
+  <div class="wrap">
+    <div class="warp_game">
+      <h2></h2>
+      <ul class="index">
+        <li>
+          <h3>游戏介绍</h3>
+          <p> &nbsp; &nbsp; &nbsp;
+            俄罗斯方块是1980年末期至1990年代初期风靡全世界的计算机游戏，是落下型益智游戏的始祖，为苏联首个在美国发布的娱乐软件。此游戏最初是由阿列克谢·帕基特诺夫在苏联设计和编写，于1984年6月6日首次发布，当时帕基特诺夫正在苏联科学院电算中心工作。此游戏的名称是由希腊语数字四前缀"tetra-"（因所有落下方块皆由四块组成）和帕基特诺夫最喜欢的运动网球（"tennis"）拼接而成。虽然俄罗斯方块不再流行，但其经久不衰的玩法一直被封为经典。
+            <br /> &nbsp; &nbsp; &nbsp;
+            游戏有许多积极意义，诸如宣泄精神压力，获得简单的操作快乐，思考后完成心理预期的成就感，这些都是游戏者的体验，玩家的体验。玩游戏还可以培养团队协作能力、动手能力、思考能力等等。</br>
+        </li>
+        <li>
+          <h3>操作说明</h3>
+          <p> &nbsp; &nbsp; &nbsp; 请用方向键和空格键进行操作：上/W=>旋转,左/A=>左移,右/D=>右移,下/S=>下移,空格=>坠落;</p>
+        </li>
+        <li>
+          <% if(user.Name){ %>
+          <h3><a href="/gameOne" id='gameOne'>单人游戏</a></h3>
+          <% }else{ %>
+          <h3><a id='gameOne'>单人游戏</a></h3>
+          <% } %>
+          <p> &nbsp; &nbsp; &nbsp;
+            进入界面直接开始游戏，可用方向键和空格键进行左移、右移、下移、下落、旋转等操作，随着时间的推移，难度加大，即下落速度越来越快；点击暂停按钮暂停游戏；点击刷新按钮将重新开始游戏，视为异常退出，不保存该局数据。
+          </p>
+        </li>
+        <li>
+          <% if(user.Name){ %>
+          <h3> <a href="/gameTwo">实时对战</a></h3>
+          <% }else{ %>
+          <h3> <a>实时对战</a></h3>
+          <% } %>
+          <p> &nbsp; &nbsp; &nbsp;
+            进入界面直接进入配对状态，出现等待对手的提示；游戏开始后，可用方向键和空格键进行左移、右移、下移、下落、旋转等操作，随着时间的推移，难度加大，即下落速度越来越快；点击刷新按钮将重新开始游戏，对手直接胜利；初始速度为1，每90秒速度加快1，同时消3行即可给对手增加障碍；
+          </p>
+        </li>
+        <!-- <li>
+          <h3><a href="/gameThree">棋逢对手</a></h3>
+          <p> &nbsp; &nbsp; &nbsp; 同新手过招，不同之处在于：初始速度为1，每60秒速度加快2；同时消4行才会给对手增加障碍。</p>
+        </li> -->
+      </ul>
+    </div>
+
+</body>
+
+</html>

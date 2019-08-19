@@ -1,4 +1,4 @@
-var socket = io();
+var socket = io.connect('/gameThree');
 var local = new Local(socket);
 var remote = new Remote(socket);
 socket.on('waiting',function(str){

@@ -1,0 +1,86 @@
+<%- include loginHeader %>
+<style>
+    .change{
+        font-size :15px;
+        color:green; 
+    }
+    .data_1{
+        /* text-align: center; */
+        /* height:60px; */
+        margin:10px 0 0 0;
+    }
+    .data_1 li{
+        margin:15px auto;
+        width:130px;
+        /* background-color: aquamarine; */
+    }
+    /* .data li {
+        float: left;
+        color: gray;
+        font-size: 20px;
+    } */
+
+    .record li {
+        color: gray;
+        list-style: circle inside;
+    }
+
+    .wrap {
+        min-height: 700px;
+        /* height: 100%; */
+    }
+
+    div.regg {
+        padding: 10px 20px;
+    }
+
+    h3.center {
+        margin: 0 0 15px 0;
+    }
+
+    span.others {
+        color:black;
+    }
+</style>
+</head>
+
+<body>
+    <div class="nav_top">
+        <ul class="nav_ul">
+            <li class="login">
+                <a id="name"><%= user.Name %></a>
+            </li>
+            <li class="nav_left"><a href="/">TETRIS</a></li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="warp_game">
+            <div class="reg">
+                <h2 class="center">个人中心 <a class="change" href="/change"> [修改]</a></h2>
+                <ul class=" data data_1">
+                    <li>昵 &nbsp; 称: &nbsp; <%= datas[0].Name %></li>
+                    <li>性 &nbsp; 别: &nbsp;  <%= datas[0].Sex %> </li>
+                    <li>年 &nbsp; 龄: &nbsp;  <%= datas[0].Age %> </li>
+                    <li>居住地: &nbsp;  <%= datas[0].Address %> </li>
+                    
+                </ul>
+            </div>
+            <!-- <div class=" reg regg" style="height:90px;">
+                <h3 class="center">历史最高</h3>
+                <ul class="data">
+                    <li>消行数:&nbsp; <span> 50 </span></li>
+                    <li style="margin:0 0 0 120px;">得分数: &nbsp; <span> </span></li>
+                </ul>
+            </div> -->
+            <!-- <div class="reg regg">
+                <h3 class="center">个人战绩</h3>
+                <ul class="record">
+                  
+                    <li><span>3分钟前</span>累计消<span></span>行，累计得<span class="others"><span>分</span>。</li>
+                    
+                </ul>
+            </div> -->
+        </div>
+</body>
+
+</html>

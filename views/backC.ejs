@@ -1,0 +1,39 @@
+
+    <%- include backTop %>
+    <div class="Right" id="Right">
+        <div class="Details">
+            <form class="search" action="" method="POST">
+                <input type="text" placeholder="输入用户ID" name="Id" />
+                <button class="btn" type="submit">搜索</button>
+            </form>
+            <div class="table_div">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="">用户ID</th>
+                            <th>昵称</th>
+                            <th class="">性别</th>
+                            <th class="">年龄</th>
+                            <th class="">居住地</th>
+                            <th>总对局</th>
+                            <th class="">胜率</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var left_li = $(".Left ul li:eq(3)"),
+                left_a = $(".Left ul li:eq(3) a");
+            left_li.css("border-left", "1px solid red");
+            left_a.css("color", "red");
+            // $(".left ul").find('li:eq(3)').children(".trig").css('display', 'block');
+            // $(".table tbody tr:odd").css("backgroundColor", "#E3F2F5");
+        });
+    </script>
+    </body>
+
+</html>

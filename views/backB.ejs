@@ -1,0 +1,55 @@
+<%- include backTop %>
+<div class="Right" id="Right">
+    <div class="Details">
+        <form class="search" action="/backB" method="POST">
+            <input type="text" placeholder="输入用户昵称" name="Phone" />
+            <button class="btn" type="submit">搜索</button>
+        </form>
+        <div class="table_div">
+            <% if(datas.length) { %>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="">ID</th>
+                        <th class="">用户昵称</th>
+                        <th class="">时间</th>
+                        <th>胜/败</th>
+                        <th class="">对手昵称</th>
+                        <th class="">删除</th>
+                    </tr>
+                </thead>
+                <form class="search" action="/backB_2" method="POST">
+                    <tbody>
+                        <% for(var i=0;i< datas.length;i++){ %>
+                        <tr>
+                            <td ><%= datas[i].tr_Id %></td>
+                            <td ><%= datas[i].Phone %></td>
+                            <td ><%= datas[i].Time %></td>
+                            <td><%= datas[i].Victory %></td>
+                            <td ><%= datas[i].RPhone%></td>
+                            <td ><input type="submit"  name='tr_Id' value='<%= datas[i].tr_Id %>'/></td>
+                        </tr>
+                        <% }%>
+                    </tbody>
+                </form>
+            </table>
+            <% }else{ %>
+            <p class="msg"><%= msg %></p>
+            <% } %>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var left_li = $(".Left ul li:eq(2)"),
+            left_a = $(".Left ul li:eq(2) a");
+        left_li.css("border-left", "1px solid red");
+        left_a.css("color", "red");
+        // $(".left ul").find('li:eq(3)').children(".trig").css('display', 'block');
+        $(".table tbody tr:odd").css("backgroundColor", "#E3F2F5");
+    });
+</script>
+</body>
+
+</html>

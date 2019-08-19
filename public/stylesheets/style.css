@@ -1,0 +1,360 @@
+a{
+  color:black;
+  text-decoration: none;
+}
+li{
+  list-style: none;
+}
+body{
+  min-width: 800px;
+}
+h2{
+  text-align: center;
+}
+
+body,ul,h2,h3{
+  margin:0px;
+  padding:0px;
+  /* background-color: cornflowerblue; */
+}
+.button,button {
+
+  padding:5px 20px ;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color:green;
+  color:white;
+  /* background-color: rgb(148, 181, 241); */
+  
+}
+/* ********* */
+/* 顶部导航条 */
+.nav_top{
+  background: rgba(45,45,45,0.98);
+  width:100%;
+  height:48px;
+
+}
+.nav_ul li{
+  /* background-color:red; */
+  float:right;
+  line-height: 48px;
+}
+.nav_ul li a{
+  color:white;
+}
+.nav_ul li.login{
+  margin:0 35px 0 10px;
+}
+
+#waiting{
+  width:75%;
+  /* background-color: blue; */
+  /* padding: 10px 0; */
+  text-align: center;
+  color:white;
+  /* font-weight: 900;  */
+}
+
+.wrap{
+  /* background-color:lightblue; */
+  margin: 0px auto;
+  height:700px;
+  max-width:980px; 
+}
+.warp_game{
+  /* background-color: blanchedalmond; */
+  position: relative;
+  height:100%;
+  width:100%;
+  
+}
+
+/* 游戏界面 */
+/* 对手区域 */
+.square_remote{
+  /* background-color: blue; */
+  border:1px solid black;
+  border-top: none;
+  overflow: hidden;
+  width:202px;
+  padding:1px;
+  position: absolute;
+  top:5px;
+  left:11px;
+  z-index: 999;
+  
+}
+.remote_data{
+  /* position: absolute; */
+  top:405px;
+  border:none;
+
+}
+.local_ID{
+  /* position: absolute; */
+  top:608px;
+  border:none;
+
+}
+.remote_game{
+  
+  background-color:#FAF0E6;
+  width:200px;
+  height:400px;
+  
+}
+
+/* 游戏区域 */
+.square_local{
+  background-color:#FAF0E6;
+  width:330px;
+  height:659px;
+  border:4px solid black;
+  border-top: none;
+  position: absolute;
+  left:230px;
+  top:5px;
+  z-index: 999;
+}
+.local_game{
+  position: absolute;
+ 
+}
+/* next */
+
+.square_next{
+  /* background-color: blue; */
+  width:126px;
+  position: absolute;
+  left:580px;
+  top:5px;
+}
+.square_Next{
+  /* background-color: blue; */
+  width:126px;
+  position: absolute;
+  left:30px;
+  top:5px;
+
+}
+.next_title{
+  /* background-color: aqua; */
+  text-align: center;
+  font-weight: 900;
+}
+.next{
+  border:3px solid black;  
+  width:120px;
+  height:120px;
+  background-color:#FAF0E6;
+  padding:1px;
+  
+}
+.remote_next,
+.local_next{
+  /* background-color:#f2faff; */
+  position: absolute;
+}
+
+.local_data li{
+  /* background-color: aqua; */
+  text-align: center;
+  margin: 10px 0 ;
+}
+
+.local_data li input{
+  outline: none;
+  /* display: block; */
+  border:none;
+  text-align: center;
+  background-color:#FAF0E6;
+  width:126px;
+  line-height: 25px;
+}
+.local_music{
+  width:126px;
+  position: absolute;
+  left:580px;
+  top:520px;
+  /* background-color: beige; */
+}
+
+.local_music span{
+  
+  margin: 15px 50px;
+  display: block;
+  width:30px;
+  height:30px;
+  /* background-color: aqua; */
+  background-repeat: no-repeat;
+}
+.local_music span.start_music {
+  background-image: url(../images/music.png);
+  background-size: 25px 25px;
+  
+}
+.local_music span.stop_music {
+  background-image: url(../images/mute.png);
+  background-size: 25px 25px;
+  
+}
+.local_music span.stop {
+  background-size: 30px 30px;
+  background-image: url(../images/stop.png);
+}
+.local_music span.restart {
+  background-size: 33px 33px;
+  background-image: url(../images/restart.png);
+}
+
+
+/* 方块格式 */
+
+.big_none,
+.small_none,
+.big_block,
+.small_block,
+.big_current_7,
+.small_current_7,
+.big_current_1,
+.small_current_1,
+.big_current_2,
+.small_current_2,
+.big_current_3,
+.small_current_3,
+.big_current_4,
+.small_current_4,
+.big_current_5,
+.small_current_5,
+.big_current_6,
+.small_current_6{
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.big_none{
+  background-color:#FAF0E6;
+  border:1px solid lightgray;
+} 
+
+.small_none{
+  background-color:#FAF0E6;
+  /* border:1px solid lightgray; */
+} 
+.big_none,
+.big_block{
+  border:1px solid lightgray;
+}
+
+.big_last{
+  border:1px dotted black;
+}
+
+.big_none,
+.big_block,
+.big_last,
+.big_current_7,
+.big_current_1,
+.big_current_2,
+.big_current_3,
+.big_current_4,
+.big_current_5,
+.big_current_6{
+  width:33px;
+  height:33px;
+  
+}
+
+.small_none,
+.small_current_7,
+.small_current_1,
+.small_current_2,
+.small_current_3,
+.small_current_4,
+.small_current_5,
+.small_current_6{
+  width:20px;
+  height:20px; 
+}
+
+.big_block,
+.small_block{
+  /* border:1px solid lightgray; */
+  background-color:gray; 
+}
+
+.remote_gameover,
+.local_gameover{
+  text-align: center;
+  font-weight: 900;
+  outline: none;
+  border:none;
+  width:126px;
+
+}
+.big_current_1,
+.small_current_1 {
+  background-image: url(../images/T.png);
+}
+
+.big_current_2,
+.small_current_2 {
+    background-image: url(../images/BB.png);
+}
+
+.big_current_3,
+.small_current_3 {
+    background-image: url(../images/L.png);
+}
+
+.big_current_4,
+.small_current_4 {
+    background-image: url(../images/LL.png);
+}
+
+.big_current_5,
+.small_current_5 {
+    background-image: url(../images/Z.png);
+}
+
+.big_current_6,
+.small_current_6 {
+    background-image: url(../images/ZZ.png);
+}
+.big_current_7,        
+.small_current_7{
+    background-image: url(../images/I.png);
+}
+
+.big_current_1,
+.big_current_2,
+.big_current_3,
+.big_current_4,
+.big_current_5,
+.big_current_6,
+.big_current_7{
+    background-size: 33px 33px;
+}
+
+        
+.small_current_1,
+.small_current_2,
+.small_current_3,
+.small_current_4,
+.small_current_5,
+.small_current_6,
+.small_current_7{
+    background-size: 20px 20px;
+}
+
+p.errmsg{
+  color:red;
+  text-align: center;
+  font-size: 19px;
+}
+p.msg{
+  color:green;
+  text-align: center;
+  font-size: 19px;
+}

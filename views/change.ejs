@@ -1,0 +1,51 @@
+<%- include loginHeader %>
+<style>
+
+    .wrap {
+        min-height: 700px;
+        /* height: 100%; */
+    }
+
+    div.regg {
+        padding: 10px 20px;
+    }
+
+    h2{
+        margin:0 0 15px 0;
+    }
+    span.others{
+        color:green;
+    }
+</style>
+</head>
+
+<body>
+    <div class="nav_top">
+        <ul class="nav_ul">
+            <li class="login">
+                <a id="name"><%= user.Name %></a>
+            </li>
+            <li class="nav_left"><a href="/data">返回</a></li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="warp_game">
+            <div class="reg">
+                <h2>资料修改</h2>
+                <form action="/change" method="POST" class="ad_data">
+                    昵 &nbsp; 称：<input type="text" id = 'name' name="Name" value="<%= datas[0].Name %>"/>
+                    密 &nbsp; 码：<input type="text" id = 'password' name="Password" value="<%= datas[0].Password %>"  />
+                    性 &nbsp; 别：<input type="text" id = 'sex' name="Sex" value="<%= datas[0].Sex %>"  />
+                    年 &nbsp; 龄：<input type="text" id = 'age' name="Age" value="<%= datas[0].Age %>"  />
+                    居住地：<input type="text" id = 'address' name="Address" value="<%= datas[0].Address %>"  />
+                    <button type="submit">保 存</button>
+                </form>
+                <% if(msg){ %>
+                    <p class = "msg"><%= msg %></p>
+                    <% } %>
+            </div>
+
+        </div>
+</body>
+
+</html>

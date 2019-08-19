@@ -1,0 +1,30 @@
+<%- include loginHeader %>
+</head>
+<body>
+    <div class="nav_top">
+        <ul class="nav_ul">
+            <li class="login"><a id="register" href="/reg">注册</a></li>
+            <li class="nav_left"><a href="/">TETRIS</a></li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="warp_game">
+            <div class="reg">
+                <h2>登 &nbsp; &nbsp; 录</h2>
+                <% if(errmsg){ %>
+                    <p id = 'errmsg' class = "errmsg"><%= errmsg %></p>
+                    <% } %>
+                <form action="/login" method="post">
+                    用户名：<input id="loginPhone" name="Phone" placeholder="输入手机号码" type="text" />
+                    <br />
+                    密 &nbsp; 码：<input id="Password" name="Password" placeholder="输入密码" type="password" />
+                    <button type="submit">登 录</button>
+                </form>
+                <!-- <p id = 'errmsg' class = "errmsg">xx</p> -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+   

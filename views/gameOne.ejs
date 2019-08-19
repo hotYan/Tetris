@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- <script type="text/javascript" src="/javascripts/jquery-2.1.4.min.js"></script> -->
+    <script type="text/javascript">
+
+
+    </script>
+    <style>
+        .nav_ul li.nav_left {
+            float: left;
+            margin: 0 0 0 30px;
+        }
+        .show_music{
+            /* background-color: red; */
+            width:126px;
+            height:50px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav_top">
+        <ul class="nav_ul">
+            <li class="login">
+                <a id="local_name" href="/data"><%= user.Name %></a>
+            </li>
+            <li class="waiting" id='waiting'></li>
+            <li class="nav_left"><a href="/">TETRIS</a></li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="warp_game">
+            <div class="square_local" id="local">
+                <div class="local_game" id="local_game"></div>
+            </div>
+            <form action="/gameOne" method="post">
+                <div class="square_next">
+                    <div class="next_title">N E X T</div>
+                    <div class="next">
+                        <div class="local_next" id="local_next"></div>
+                    </div>
+                    <ul class="local_data">
+                        <li>历史最高<br />
+                            <% if(datas.length) { %>
+                            <input readonly id="max_score" value='<%= datas[0].Score %>'></input>
+                            <% }else{ %>
+                            <input readonly="readonly" value='0'></input>
+                            <% } %>
+                        </li>
+                        <li>当前分数<br /><input readonly id="local_score" value='0' name='Score'></input></li>
+                        <li>已用时间<br /><input readonly id="local_time" value='00:00:00'></input></li>
+                        <li>当前速度<br /><input readonly id="local_speed" value='1'></input></li>
+                        <li>已消行数<br /><input readonly id="local_line" value='0' name='Line'></input></li>
+                    </ul>
+                    <input readonly class='local_gameover' id="local_gameover" name='Over'></input>
+                </div>
+                <div class='local_music'>
+                        <audio id='music' autoplay='autoplay' loop=" loop" src="/images/music.mp3"></audio>
+                    <div  class="show_music">
+                        <span class="start_music" id="start_music"  onclick="pause()"></span>
+                        <span class="stop_music " id="stop_music"  style="display: none"onclick="play()"></span>
+                    </div>
+
+                    <span class="stop" id="stop"></span>
+                    <button type="submit" style='width:126px;'>重新开始</button>
+                    <!-- <span class="restart" id="restart"></span> -->
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- <audio id='music' src="/images/music.mp3" autoplay='autoplay' controls="controls" loop='loop'>
+        Your browser does not support the audio element.
+    </audio> -->
+    <script src="/javascripts/square.js"></script>
+    <script src="/javascripts/squareFactory.js"></script>
+    <script src="/javascripts/game.js"></script>
+    <script src="/javascripts/oneLocal.js"></script>
+    <script src="/javascripts/oneScript.js"></script>
+    <script>
+        var myVideo = document.getElementById("music");
+        var start = document.getElementById("start_music");
+        var stop = document.getElementById("stop_music");
+        // var over = document.getElementById("local_gameover").innerHTML;
+        // console.log(over);
+        function play() {
+            myVideo.play();
+            stop.style.display='none';
+            start.style.display='block';
+        }
+
+        function pause() {
+            myVideo.pause();
+            stop.style.display='block';
+            start.style.display='none';
+        }
+    </script>
+
+
+</body>
+
+</html>

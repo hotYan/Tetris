@@ -1,0 +1,73 @@
+<%- include backTop %>
+<div class="Right" id="Right">
+    <div class="Details">
+        <form class="search" action="/back" method="POST">
+            <input type="text" placeholder="输入手机号" name="Phone" />
+            <button class="btn" type="submit">搜索</button>
+        </form>
+        <div class="table_div">
+            <% if(datas.length) { %>
+            <table class="table">
+                <thead>
+                    <tr> 
+                        
+                        <th class="">用户ID</th>
+                        <th class="">手机号</th>
+                        <th>昵称</th>
+                        <th class="">性别</th>
+                        <th class="">年龄</th>
+                        <th class="">居住地</th>
+                        <th>最高行数</th>
+                        <th class="">最高分数</th>
+                        <th class="">删除</th>
+                    </tr>
+                </thead>
+                <form class="search" action="/back_2" method="POST">
+                    <tbody id='data_list'>
+                        <% for(var i=0;i< datas.length;i++){ %>
+                        <tr >
+                           
+                            <td ><%= datas[i].user_Id %></td>
+                            <td ><%= datas[i].Phone %></td>
+
+                            <td><%= datas[i].Name %></td>
+                            <td ><%= datas[i].Sex %></td>
+                            <td ><%= datas[i].Age %></td>
+                            <td ><%= datas[i].Address%></td>
+                            <td><%= datas[i].Total %></td>
+                            <td ><%= datas[i].WinRate %></td>
+                            <td >
+                                <input type="submit"  name='user_Id' value='<%= datas[i].user_Id %>'/>
+                            </td>
+                        </tr>
+                        <% }%>
+                    </tbody>
+                </form>
+            </table>
+            <% }else{ %>
+            <p class="msg"><%= msg %></p>
+            <% } %>
+        </div>
+    </div>
+</div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var left_li = $(".Left ul li:eq(0)"),
+            left_a = $(".Left ul li:eq(0) a");
+            console.log(left_li.length);
+        left_li.css("border-left", "1px solid red");
+        left_a.css("color", "red");
+        $(".table tbody tr:odd").css("backgroundColor", "#E3F2F5");
+
+
+    });
+
+    
+</script>
+
+
+</body>
+
+</html>

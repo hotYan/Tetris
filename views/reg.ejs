@@ -1,0 +1,40 @@
+<%- include loginHeader %>
+</head>
+<body>
+    <div class="nav_top">
+        <ul class="nav_ul">
+            <li class="login"><a id="register" href="/login">登录</a></li>
+            <li class="nav_left"><a href="/">TETRIS</a></li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <div class="warp_game">
+            <div class="reg">
+                <h2>注 &nbsp;  &nbsp; 册</h2>
+                <% if(errmsg){ %>
+                    <p id = 'errmsg' class = "errmsg"><%= errmsg %></p>
+                    <% } %>
+                <form action="/reg" method="post">
+                    用户名：<input placeholder="输入手机号码" type="text" id="regPhone" name="Phone" required="required" />
+                    <br />
+                    密 &nbsp; 码：<input placeholder="输入密码" type="password" id='Password_1'name="Password" required="required" />
+                    <br />
+                    密 &nbsp; 码：<input class="input" placeholder="重复密码" id='Password_2'type="password" name="Password2" required="required" />
+                    <br />
+                    昵 &nbsp; 称：<input placeholder="输入昵称" type="text" id="Name" name="Name" required="required" />
+                    <br />
+                    性 &nbsp; 别：<input placeholder="输入性别" type="text" id="Sex" name="Sex" required="required" />
+                    <br />
+                    年 &nbsp; 龄：<input placeholder="输入年龄" type="text" id ='Age' name="Age" required="required" />
+                    <br />
+                    居住地：<input placeholder="输入居住地" type="text" id='Address' name="Address" required="required" />
+                    <button type="submit">注 册</button>
+                    
+                </form>
+                <!-- <p id = 'errmsg' class = "errmsg">xx</p> -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

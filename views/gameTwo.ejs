@@ -1,0 +1,52 @@
+<%- include header %>
+<%- include top %>
+<div class="wrap">
+    <div class="warp_game">
+        <div class="square_remote" id="remote">
+            <div class="remote_game" id="remote_game"></div>
+        </div>
+        <form action="/gameTwo" method="post">
+            <div class="square_remote remote_data">
+                <ul class="local_data">
+                    <li>对手ID<input readonly id="remote_ID" name='remoteID' style="width:200px;"></input></li>
+                </ul>
+            </div>
+            <div class="square_remote local_ID">
+                <ul class="local_data">
+                    <li>我的ID<input readonly style="width:200px;" id="local_ID" name='localID'></input></li>
+                </ul>
+            </div>
+
+            <div class="square_Next">
+                <div class="next_title">N E X T</div>
+                <div class="next">
+                    <div class="remote_next" id="remote_next"></div>
+                </div>
+                <div class='remote_gameover' id="remote_gameover"></div>
+            </div>
+
+            <div class="square_local" id="local">
+                <div class="local_game" id="local_game"></div>
+            </div>
+            <div class="square_next">
+                <div class="next_title">N E X T</div>
+                <div class="next">
+                    <div class="local_next" id="local_next"></div>
+                </div>
+                <ul class="local_data">
+                    <li>当前速度<br /><input readonly id="local_speed" value='1'></input></li>
+                    <li>已用时间<br /><input readonly id="local_time" value='00:00:00'></input></li>
+                </ul>
+                <input readonly class='local_gameover' id="local_gameover" name='Over'></input>
+
+            </div>
+            <div class='local_music'>
+                <span class="music" id="music"></span>
+                <button type="submit" id='restart' style='width:126px;'>重新开始</button>
+                <!-- <span class="restart" id="restart"></span> -->
+            </div>
+        </form>
+    </div>
+
+</div>
+<%- include footer %>
