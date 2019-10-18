@@ -11,4 +11,7 @@
 4. 浏览器打开localhost:3000
 
 ### 效果图
-![img](https://github.com/hotYan/Tetris/blob/master/3_Tetris/public/img/img.png)
+
+<div align =center>
+<img src='https://github.com/hotYan/Tetris/blob/v1.0/public/img/img.png' alt='img' height='450px' width="450px" />
+</div> 
